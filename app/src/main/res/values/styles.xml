@@ -1,4 +1,6 @@
 <resources>
-<style name="Theme.Maya" parent="Theme.Material3.DayNight.NoActionBar">
-<item name="android:fontFamily">sans</item><item name="android:colorAccent">#9C27B0</item>
-</style></resources>
+    <style name="AppTheme" parent="@android:style/Theme.Material.Light.NoActionBar">
+        <item name="android:fontFamily">sans</item>
+        <item name="android:colorAccent">#7B4DFF</item>
+    </style>
+</resources>
