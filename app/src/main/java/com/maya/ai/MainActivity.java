@@ -70,8 +70,17 @@ public class MainActivity extends Activity {
         String a;
 
         // Memory save
-        if (q.startsWith("মনে রাখো")) {
-            String m = q.substring("মনে রাখো".length()).trim();
+        if (q.startsWith("মনে রাখো") ||
+            q.startsWith("আমার নাম ") ||
+            q.contains("মনে রেখো")) {
+
+            String m = q;
+
+            if (q.startsWith("মনে রাখো")) {
+                m = q.substring("মনে রাখো".length()).trim();
+            } else if (q.contains("মনে রেখো")) {
+                m = q.substring(q.indexOf("মনে রেখো") + "মনে রেখো".length()).trim();
+            }
 
             if (!m.isEmpty()) {
                 saveMemory(m);
