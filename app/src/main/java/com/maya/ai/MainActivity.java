@@ -84,7 +84,13 @@ void reply() {
 
         chat.append("তুমি: "+q+"\nMaya: "+a+"\n\n");
         input.setText("");
-        tts.speak(a, TextToSpeech.QUEUE_FLUSH, null, "maya");
+        try {
+            if (tts != null) {
+                tts.speak(a, TextToSpeech.QUEUE_FLUSH, null, "maya");
+            }
+        } catch (Exception e) {
+            // Keep chat working if TTS is unavailable
+        }
     }
 
     @Override protected void onDestroy() {
